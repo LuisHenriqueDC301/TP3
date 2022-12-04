@@ -1,5 +1,7 @@
 from tkinter import *
 from PIL import Image, ImageEnhance,ImageFilter, ImageTk
+from tkinter import filedialog,END
+from tkinter.filedialog import asksaveasfilename
 global tela
 
 def RodarImg(img,graus):
@@ -14,7 +16,7 @@ def Brilho(img,br):
 
 def Redimensionar(img):
     img = Image.open(img)
-    img = img.resize((round(img.size[0]*1.5), round(img.size[1]*3.5)))
+    img = img.resize((607, 369))
     img.save("Image.jpg")
 
 def Borrar(img):
@@ -22,3 +24,6 @@ def Borrar(img):
     img = img.filter(ImageFilter.GaussianBlur(10))
     img.save("Image.jpg")
 
+def Salvar(img):
+    img = Image.open(img)
+    img.save("Image.jpg")
